@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     height: 100vh;
     background: hsla(259, 84%, 78%, 1);
 
