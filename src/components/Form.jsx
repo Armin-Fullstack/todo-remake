@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Title from "./Title";
 
 const Form = () => {
     const [input , setInput] = useState("")
@@ -12,10 +13,10 @@ const Form = () => {
     <>
       {/* main container  */}
       <div className="container max-w-5xl mt-20 mx-auto">
+
         {/* title  */}
-        <h1 className="text-center text-gray-600 text-4xl md:text-7xl italic">
-          My Todo List
-        </h1>
+        <Title/>
+
         {/* form  */}
         <form className="mt-20 flex justify-center space-x-3">
             {/* input and button container  */}
