@@ -20,6 +20,11 @@ const Form = () => {
                 <button className="bg-black text-white hover:text-orange-400 p-2 rounded-lg">ADD</button>
             </div>    
 
+            <select name="todos" className="bg-transparent outline-none border border-slate-600 p-1">
+                <option value="All">All</option>
+                <option value="Completed">Completed</option>
+                <option value="Uncompleted">Uncompleted</option>
+            </select>
         </form>
       </div>
     </>
