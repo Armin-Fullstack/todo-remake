@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const Form = () => {
+    const [input , setInput] = useState("")
+
+    const getUserInput = (e) => {
+        setInput(e.target.value)
+    }
+
+
   return (
     <>
       {/* main container  */}
@@ -11,7 +20,8 @@ const Form = () => {
         <form className="mt-20 flex justify-center space-x-3">
             {/* input and button container  */}
             <div className="w-1/2 flex justify-between space-x-2">
-            <input
+            <input value={input}
+            onChange={getUserInput}
                     type="text"
                     className="w-full border-b border-slate-600 bg-transparent focus:outline-none placeholder:text-lg placeholder:text-gray-500"
                     placeholder="Add a task"
