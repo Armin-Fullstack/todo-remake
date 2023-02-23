@@ -3,11 +3,19 @@ import Title from "./Title";
 
 const Form = () => {
     const [input , setInput] = useState("")
+    const [todo , setTodo] = useState([])
 
     const getUserInput = (e) => {
         setInput(e.target.value)
     }
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault()
+        setTodo([
+            ...todo, {id: crypto.randomUUID() , userText: input , completed: false}
+        ])
+        setInput("")
+    }
 
   return (
     <>
@@ -26,7 +34,7 @@ const Form = () => {
                     placeholder="Add a task"
                 />
 
-            <button className="bg-black text-white text-sm hover:text-orange-400 p-2 rounded-lg">ADD</button>
+            <button onClick={onSubmitHandler} className="bg-black text-white text-sm hover:text-orange-400 p-2 rounded-lg">ADD</button>
              
             <select name="todos" className="w-20 md:w-32 bg-transparent outline-none border border-slate-600 p-1">
                 <option value="All">All</option>
