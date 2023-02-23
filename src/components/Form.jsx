@@ -12,26 +12,23 @@ const Form = () => {
   return (
     <>
       {/* main container  */}
-      <div className="container max-w-5xl mt-20 mx-auto">
+      <div className="container max-w-5xl mt-20 mx-auto px-6">
 
         {/* title  */}
         <Title/>
 
         {/* form  */}
         <form className="mt-20 flex justify-center space-x-3">
-            {/* input and button container  */}
-            <div className="w-1/2 flex justify-between space-x-2">
             <input value={input}
             onChange={getUserInput}
                     type="text"
-                    className="w-full border-b border-slate-600 bg-transparent focus:outline-none placeholder:text-lg placeholder:text-gray-500"
+                    className="w-full md:w-1/2 border-b border-slate-600 bg-transparent focus:outline-none placeholder:text-md md:placeholder:text-lg placeholder:text-gray-500"
                     placeholder="Add a task"
                 />
 
-                <button className="bg-black text-white hover:text-orange-400 p-2 rounded-lg">ADD</button>
-            </div>    
-
-            <select name="todos" className="bg-transparent outline-none border border-slate-600 p-1">
+            <button className="bg-black text-white text-sm hover:text-orange-400 p-2 rounded-lg">ADD</button>
+             
+            <select name="todos" className="w-20 md:w-32 bg-transparent outline-none border border-slate-600 p-1">
                 <option value="All">All</option>
                 <option value="Completed">Completed</option>
                 <option value="Uncompleted">Uncompleted</option>
