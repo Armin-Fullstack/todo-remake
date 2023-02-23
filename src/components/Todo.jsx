@@ -1,8 +1,8 @@
-const Todo = () => {
+const Todo = ({userText}) => {
   return (
     // todo's container
     <div className="flex items-center justify-center space-x-3">
-      <p className="flex flex-1 border-b border-l pb-3 pl-5"></p>
+      <p className="flex flex-1 border-b border-l pb-3 pl-5">{userText}</p>
       <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
