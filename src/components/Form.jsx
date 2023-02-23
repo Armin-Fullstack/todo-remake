@@ -1,9 +1,7 @@
-import { useState } from "react";
+
 import Title from "./Title";
 
-const Form = () => {
-    const [input , setInput] = useState("")
-    const [todo , setTodo] = useState([])
+const Form = ({input , setInput , todo , setTodo}) => {
 
     const getUserInput = (e) => {
         setInput(e.target.value)
