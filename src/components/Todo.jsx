@@ -1,4 +1,15 @@
+import { useContext } from "react";
+import {MyTodoListContext} from "../context/context"
+
+
 const Todo = ({userText}) => {
+  const todo = useContext(MyTodoListContext)
+const onDeleteTodo = () => {
+  console.log(todo);
+}
+
+
+
   return (
     // todo's container
     <div className="flex items-center justify-center space-x-3">
@@ -19,7 +30,7 @@ const Todo = ({userText}) => {
           />
         </svg>
       </button>
-      <button>
+      <button onClick={onDeleteTodo}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
