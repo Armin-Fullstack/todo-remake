@@ -8,11 +8,25 @@ const Todo = ({ userText, eachTodo }) => {
     setTodo(todo.filter((element) => element.id !== eachTodo.id));
   };
 
+  const onCompleteHandler = () => {
+    setTodo(todo.map(element => {
+      console.log(element);
+      if(element.id === eachTodo.id) {
+        return {
+          ...element , completed: !element.completed
+        }
+      }
+      return element
+    }))
+  }
+
+
+
   return (
     // todo's container
     <div className="flex items-center justify-center space-x-3">
       <p className="flex flex-1 border-b border-l pb-3 pl-5">{userText}</p>
-      <button>
+      <button onClick={onCompleteHandler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
