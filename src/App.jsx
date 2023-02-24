@@ -1,6 +1,6 @@
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {MyTodoListContext} from "./context/context"
 
 
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
    
-   <MyTodoListContext.Provider value={todo}>
+   <MyTodoListContext.Provider value={useMemo(() => [todo , setTodo] , [todo , setTodo])}>
 
     <Form input={input} setInput={setInput} todo={todo} setTodo={setTodo}/>
     <TodoList todo={todo}/>

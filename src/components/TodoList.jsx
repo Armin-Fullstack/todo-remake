@@ -9,7 +9,7 @@ const TodoList = ({todo}) => {
                 <div className="w-full md:w-1/2 mx-auto flex flex-col space-y-10">
                     {todo.map(element => {
                         return (
-                            <Todo key={element.id} userText={element.userText} />
+                            <Todo key={element.id} userText={element.userText} eachTodo={element} />
                         )
                     })}
                 </div>

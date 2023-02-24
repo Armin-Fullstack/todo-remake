@@ -1,14 +1,12 @@
 import { useContext } from "react";
-import {MyTodoListContext} from "../context/context"
+import { MyTodoListContext } from "../context/context";
 
+const Todo = ({ userText, eachTodo }) => {
+  const [todo, setTodo] = useContext(MyTodoListContext);
 
-const Todo = ({userText}) => {
-  const todo = useContext(MyTodoListContext)
-const onDeleteTodo = () => {
-  console.log(todo);
-}
-
-
+  const onDeleteTodo = () => {
+    setTodo(todo.filter((element) => element.id !== eachTodo.id));
+  };
 
   return (
     // todo's container

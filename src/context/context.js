@@ -1,5 +1,3 @@
 import { createContext } from "react";
 
-export const MyTodoListContext = createContext({
-
-})
+export const MyTodoListContext = createContext()
