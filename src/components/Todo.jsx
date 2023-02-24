@@ -25,7 +25,7 @@ const Todo = ({ userText, eachTodo }) => {
   return (
     // todo's container
     <div className="flex items-center justify-center space-x-3">
-      <p className="flex flex-1 border-b border-l pb-3 pl-5">{userText}</p>
+      <p className={`flex flex-1 border-b border-l pb-3 pl-5 ${eachTodo.completed ? "completed" : ""}`}>{userText}</p>
       <button onClick={onCompleteHandler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

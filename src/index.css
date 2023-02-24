@@ -15,3 +15,8 @@ body {
     
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B597F6", endColorstr="#96C6EA", GradientType=1 );
 }
+
+.completed {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
