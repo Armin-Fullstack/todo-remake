@@ -6,7 +6,7 @@ import {MyTodoListContext} from "./context/context"
 
 const App = () => {
   const [input , setInput] = useState("")
-  const [todo , setTodo] = useState([])
+  const [todo , setTodo] = useState(() => {return JSON.parse(localStorage.getItem("todos")) || []})
   const [filterStatus , setFilterStatus] = useState("All")
   const [filteredTodo , setFilteredTodo] = useState([])
 
@@ -22,7 +22,23 @@ const filterHandler = () => {
 
 useEffect(() => {
   filterHandler()
+  saveToLocalStorage()
 },[todo , filterStatus])
+
+
+useEffect(() => {
+  const check = localStorage.getItem("todos")
+  if(check) {
+    setTodo(JSON.parse(check))
+  } 
+}, [])
+
+
+const saveToLocalStorage = () => {
+  localStorage.setItem("todos" , JSON.stringify(todo))
+  setTodo(todo)
+}
+
 
   return (
     <>
