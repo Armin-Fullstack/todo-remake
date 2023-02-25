@@ -1,6 +1,6 @@
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {MyTodoListContext} from "./context/context"
 
 
@@ -20,13 +20,17 @@ const filterHandler = () => {
   }
 }
 
+useEffect(() => {
+  filterHandler()
+},[todo , filterStatus])
+
   return (
     <>
    
    <MyTodoListContext.Provider value={useMemo(() => [todo , setTodo] , [todo , setTodo])}>
 
     <Form input={input} setInput={setInput} todo={todo} setTodo={setTodo} filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
-    <TodoList todo={todo}/>
+    <TodoList filteredTodo={filteredTodo}/>
 
    </MyTodoListContext.Provider>
 
