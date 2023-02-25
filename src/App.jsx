@@ -8,6 +8,17 @@ const App = () => {
   const [input , setInput] = useState("")
   const [todo , setTodo] = useState([])
   const [filterStatus , setFilterStatus] = useState("All")
+  const [filteredTodo , setFilteredTodo] = useState([])
+
+const filterHandler = () => {
+  switch (filterStatus) {
+    case "Completed": setFilteredTodo(todo.filter(element => element.completed === true))
+    break;
+    case "Uncompleted": setFilteredTodo(todo.filter(element => element.completed === false))
+    break;
+    default: setFilteredTodo(todo)
+  }
+}
 
   return (
     <>
