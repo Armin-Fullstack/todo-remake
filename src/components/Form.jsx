@@ -1,7 +1,7 @@
 
 import Title from "./Title";
 
-const Form = ({input , setInput , todo , setTodo}) => {
+const Form = ({input , setInput , todo , setTodo , filterStatus , setFilterStatus}) => {
 
     const getUserInput = (e) => {
         setInput(e.target.value)
