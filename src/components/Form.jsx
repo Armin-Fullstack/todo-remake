@@ -15,6 +15,11 @@ const Form = ({input , setInput , todo , setTodo , filterStatus , setFilterStatu
         setInput("")
     }
 
+    const onGetUserSelectHandler = (e) => {
+      setFilterStatus(e.target.value)
+    }
+
+
   return (
     <>
       {/* main container  */}
@@ -34,7 +39,7 @@ const Form = ({input , setInput , todo , setTodo , filterStatus , setFilterStatu
 
             <button onClick={onSubmitHandler} className="bg-black text-white text-sm hover:text-orange-400 p-2 rounded-lg">ADD</button>
              
-            <select name="todos" className="w-20 md:w-32 bg-transparent outline-none border border-slate-600 p-1">
+            <select onChange={onGetUserSelectHandler} name="todos" className="w-20 md:w-32 bg-transparent outline-none border border-slate-600 p-1">
                 <option value="All">All</option>
                 <option value="Completed">Completed</option>
                 <option value="Uncompleted">Uncompleted</option>
